@@ -1,0 +1,18 @@
+.row { overflow: hidden;}
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+    float: left;
+    box-sizing: border-box;
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+.generate-columns(12);
+
+
+.container {
+  width: @container;
+  margin: 0 auto;
+}
